@@ -68,7 +68,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.14124292" />
-    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
+    <property name="settings.editor.selected.configurable" value="Ignore Files Support" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -210,7 +210,7 @@
       <workItem from="1679705464501" duration="8483000" />
       <workItem from="1679732698582" duration="776000" />
       <workItem from="1679793053592" duration="2682000" />
-      <workItem from="1679798965762" duration="3885000" />
+      <workItem from="1679798965762" duration="5402000" />
     </task>
     <servers />
   </component>
