@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b121605-0b4d-4d7f-8e3c-51e6b8672643" name="Changes" comment="欠费模块完成" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/soft/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\soft\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HrIzqB2cymNbkaxoDE98TpyPSk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.14124292" />
+    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OneDrive\project\RuoYi-Vue\ruoyi-lxgl\src" />
+      <recent name="E:\OneDrive\project\RuoYi-Vue\ruoyi-lxgl\src\main\java" />
+      <recent name="E:\OneDrive\project\RuoYi-Vue\lxgl-student\src" />
+      <recent name="E:\OneDrive\project\RuoYi-Vue\lxgl-student\src\main\java" />
+      <recent name="E:\OneDrive\project\RuoYi-Vue\lxgl-student\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\OneDrive\project\RuoYi-Vue\lxgl-student\src\main\resources\mapper\student" />
+      <recent name="E:\OneDrive\project\RuoYi-Vue\lxgl-student\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RuoYiApplication">
+    <configuration name="StuTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ruoyi-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruoyi.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ruoyi.web" />
+      <option name="MAIN_CLASS_NAME" value="com.ruoyi.web.StuTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StuTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ruoyi-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruoyi.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ruoyi.web" />
+      <option name="MAIN_CLASS_NAME" value="com.ruoyi.web.StuTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RuoYiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ruoyi-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruoyi.RuoYiApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StuTest.test" />
+      <item itemvalue="JUnit.StuTest.test1" />
+      <item itemvalue="Spring Boot.RuoYiApplication" />
+      <item itemvalue="Spring Boot.Unnamed" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StuTest.test1" />
+        <item itemvalue="JUnit.StuTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b121605-0b4d-4d7f-8e3c-51e6b8672643" name="Changes" comment="" />
+      <created>1669037042066</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669037042066</updated>
+      <workItem from="1669037044860" duration="441000" />
+      <workItem from="1669079948828" duration="1280000" />
+      <workItem from="1669599660387" duration="17000" />
+      <workItem from="1670055948139" duration="16000" />
+      <workItem from="1676255345001" duration="595000" />
+      <workItem from="1676375247894" duration="1348000" />
+      <workItem from="1676903575710" duration="593000" />
+      <workItem from="1677052579723" duration="8032000" />
+      <workItem from="1677141708308" duration="3147000" />
+      <workItem from="1677227946949" duration="637000" />
+      <workItem from="1677482566561" duration="3428000" />
+      <workItem from="1677565238323" duration="1780000" />
+      <workItem from="1677631852474" duration="3041000" />
+      <workItem from="1677656143171" duration="17000" />
+      <workItem from="1677738483249" duration="6120000" />
+      <workItem from="1677748579716" duration="2100000" />
+      <workItem from="1677755644928" duration="6570000" />
+      <workItem from="1677804681083" duration="13051000" />
+      <workItem from="1677832090510" duration="123000" />
+      <workItem from="1677834757676" duration="11300000" />
+      <workItem from="1677891155007" duration="19893000" />
+      <workItem from="1677946520138" duration="788000" />
+      <workItem from="1677977262167" duration="20343000" />
+      <workItem from="1678063734916" duration="4493000" />
+      <workItem from="1678097285242" duration="5405000" />
+      <workItem from="1678150273118" duration="28795000" />
+      <workItem from="1678200512719" duration="7584000" />
+      <workItem from="1678236548304" duration="7986000" />
+      <workItem from="1678362104153" duration="1120000" />
+      <workItem from="1678409612182" duration="1243000" />
+      <workItem from="1678495703264" duration="895000" />
+      <workItem from="1678582198029" duration="699000" />
+      <workItem from="1678758747422" duration="4850000" />
+      <workItem from="1678846003649" duration="635000" />
+      <workItem from="1678928206671" duration="11331000" />
+      <workItem from="1678982458751" duration="695000" />
+      <workItem from="1679013869661" duration="9157000" />
+      <workItem from="1679034283613" duration="16278000" />
+      <workItem from="1679100495637" duration="13097000" />
+      <workItem from="1679186857853" duration="7880000" />
+      <workItem from="1679274346519" duration="7060000" />
+      <workItem from="1679307535647" duration="5707000" />
+      <workItem from="1679323588015" duration="1199000" />
+      <workItem from="1679359977380" duration="8761000" />
+      <workItem from="1679445836965" duration="11994000" />
+      <workItem from="1679472755857" duration="3604000" />
+      <workItem from="1679533346466" duration="6991000" />
+      <workItem from="1679618936170" duration="4636000" />
+      <workItem from="1679705464501" duration="8483000" />
+      <workItem from="1679732698582" duration="776000" />
+      <workItem from="1679793053592" duration="2682000" />
+      <workItem from="1679798965762" duration="3885000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="欠费模块完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="欠费模块完成" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java</url>
+          <line>557</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java</url>
+          <line>622</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="sysUser.roles" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lxgl.mapper.DormitoryMapper">
+
+    <resultMap type="Dormitory" id="DormitoryResult">
+        <result property="id"    column="id"    />
+        <result property="stuId"    column="stu_id"    />
+        <result property="furniture"    column="furniture"    />
+        <result property="indemnity"    column="indemnity"    />
+        <result property="handleStatus"    column="handle_status"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="sysUser" resultMap="com.ruoyi.system.mapper.SysUserMapper.SysUserResult"></association>
+    </resultMap>
+
+    <sql id="selectDormitoryVo">
+        select ls.* ,su.*,sd.* from lxgl_ss ls join sys_user su on ls.stu_id=su.user_id
+        left join sys_dept  sd on su.dept_id=sd.dept_id
+    </sql>
+
+    <select id="selectDormitoryList" parameterType="Dormitory" resultMap="DormitoryResult">
+        <include refid="selectDormitoryVo"/>
+        <where>
+            <if test="stuId != null "> and stu_id = #{stuId}</if>
+            <if test="beginTotalArrears != null and beginTotalArrears != '' and endTotalArrears != null and endTotalArrears != ''"> and indemnity between #{beginTotalArrears} and #{endTotalArrears}</if>
+            <if test="beginTotalArrears !=null and beginTotalArrears != ''">and indemnity &gt;= #{beginTotalArrears} </if>
+            <if test="endTotalArrears !=null and endTotalArrears != ''">and indemnity &lt;= #{endTotalArrears} </if>
+            <if test="handleStatus != null "> and handle_status = #{handleStatus}</if>
+        </where>
+        <!-- 数据范围过滤 -->
+        ${params.dataScope}
+    </select>
+
+    <select id="selectDormitoryById" parameterType="Long" resultMap="DormitoryResult">
+        <include refid="selectDormitoryVo"/>
+        where ls.id = #{id}
+    </select>
+    <select id="selectDormitoryByStuId" parameterType="Long" resultMap="DormitoryResult">
+        select furniture,indemnity,handle_status,update_time,furniture,indemnity from lxgl_ss where  stu_id = #{stuId}
+    </select>
+    <select id="selectDormitoryHandleCountFinished" resultType="java.lang.Integer">
+        select count(1) from lxgl_ss where handle_status=1
+    </select>
+    <select id="selectDormitoryHandleCountIncomplete" resultType="java.lang.Integer">
+        select count(1) from lxgl_ss where handle_status=0
+    </select>
+
+    <insert id="insertDormitory" parameterType="Dormitory" useGeneratedKeys="true" keyProperty="id">
+        insert into lxgl_ss
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">stu_id,</if>
+            <if test="furniture != null">furniture,</if>
+            <if test="indemnity != null">indemnity,</if>
+            <if test="handleStatus != null">handle_status,</if>
+            <if test="status != null">status,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">#{stuId},</if>
+            <if test="furniture != null">#{furniture},</if>
+            <if test="indemnity != null">#{indemnity},</if>
+            <if test="handleStatus != null">#{handleStatus},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDormitory" parameterType="Dormitory">
+        update lxgl_ss
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stuId != null">stu_id = #{stuId},</if>
+            <if test="furniture != null">furniture = #{furniture},</if>
+            <if test="indemnity != null">indemnity = #{indemnity},</if>
+            <if test="handleStatus != null">handle_status = #{handleStatus},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDormitoryById" parameterType="Long">
+        delete from lxgl_ss where id = #{id}
+    </delete>
+
+    <delete id="deleteDormitoryByIds" parameterType="String">
+        delete from lxgl_ss where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

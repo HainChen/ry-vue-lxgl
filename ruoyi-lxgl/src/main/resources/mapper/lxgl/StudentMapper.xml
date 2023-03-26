@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lxgl.mapper.StudentMapper">
+
+    <sql id="selectStudentVo">
+        select ls.*, su.*, sd.*, sur.*, sr.*
+        from sys_user su
+                 left join lxgl_student ls on ls.user_id = su.user_id
+                 left join sys_dept sd on su.dept_id = sd.dept_id
+                 join sys_user_role sur on su.user_id = sur.user_id
+                 join sys_role sr on sur.role_id = sr.role_id
+    </sql>
+
+    <resultMap type="Student" id="StudentResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="age" column="age"/>
+        <result property="idCard" column="id_card"/>
+        <association property="sysUser" javaType="sysUser"
+                     resultMap="com.ruoyi.system.mapper.SysUserMapper.SysUserResult">
+        </association>
+    </resultMap>
+
+    <!--    二次查询-->
+    <select id="selectUserById" parameterType="Long" resultMap="StudentResult">
+        select *
+        from sys_user
+        where user_id = #{user_id}
+    </select>
+
+    <!--    数据回显， 查询到的字段有id,user_id,age 三个字段-->
+    <select id="selectStudentById" parameterType="Long" resultMap="StudentResult">
+        <include refid="selectStudentVo"/>
+        where ls.id = #{id}
+    </select>
+
+    <select id="selectStudentList" parameterType="Student" resultMap="StudentResult">
+        <include refid="selectStudentVo"/>
+        <where>
+            <if test="sysUser !=null  and sysUser.userName !=null and sysUser.userName !=''">and su.user_name like
+                concat('%',#{sysUser.userName},'%')
+            </if>
+            <if test="sysUser !=null  and sysUser.dept !=null  and sysUser.dept.deptName !=null and sysUser.dept.deptName !=''">
+                and sd.dept_name like concat('%',#{sysUser.dept.deptName},'%')
+            </if>
+            <if test="1==1">and sr.role_name="毕业生"</if>
+        </where>
+    </select>
+
+    <insert id="insertStudent" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+        insert into lxgl_student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="age != null">age,</if>
+            <if test="idCard != null">id_card,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="age != null">#{age},</if>
+            <if test="idCard != null">#{idCard},</if>
+        </trim>
+    </insert>
+
+    <update id="updateStudent" parameterType="Student">
+        update lxgl_student
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="age != null">age = #{age},</if>
+            <if test="idCard != null">id_card = #{idCard},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteStudentById" parameterType="Long">
+        delete
+        from lxgl_student
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteStudentByIds" parameterType="String">
+        delete from lxgl_student where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

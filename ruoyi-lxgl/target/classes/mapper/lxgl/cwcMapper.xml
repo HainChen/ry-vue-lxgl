@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lxgl.mapper.cwcMapper">
+
+    <resultMap type="Cwc" id="cwcResult">
+        <result property="id" column="id"/>
+        <result property="stuId" column="stu_id"/>
+        <result property="arrears" column="arrears"/>
+        <result property="totalArrears" column="total_arrears"/>
+        <result property="handleStatus" column="handle_status"/>
+        <result property="status" column="status"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="remark" column="remark"/>
+        <association property="sysUser" resultMap="com.ruoyi.system.mapper.SysUserMapper.SysUserResult"></association>
+    </resultMap>
+
+    <sql id="selectcwcVo">
+        select lc.*, sd.*, su.*
+        from lxgl_cwc lc
+                 join sys_user su on lc.stu_id = su.user_id
+                 left join sys_dept sd on su.dept_id = sd.dept_id
+
+    </sql>
+
+    <select id="selectcwcList" parameterType="Cwc" resultMap="cwcResult">
+        <include refid="selectcwcVo"/>
+        <where>
+            <if test="stuId != null ">and stu_id = #{stuId}</if>
+            <if test="arrears != null  and arrears != ''">and arrears like concat('%', #{arrears}, '%')</if>
+            <if test="beginTotalArrears != null and beginTotalArrears != '' and endTotalArrears != null and endTotalArrears != ''">
+                and total_arrears between #{beginTotalArrears} and #{endTotalArrears}
+            </if>
+            <if test="beginTotalArrears !=null and beginTotalArrears != ''">and total_arrears &gt;=
+                #{beginTotalArrears}
+            </if>
+            <if test="endTotalArrears !=null and endTotalArrears != ''">and total_arrears &lt;= #{endTotalArrears}</if>
+            <if test="handleStatus != null ">and handle_status = #{handleStatus}</if>
+            <if test="status != null  and status != ''">and status = #{status}</if>
+            <if test="sysUser !=null  and sysUser.userName !=null and sysUser.userName !=''">and su.user_name like
+                concat('%',#{sysUser.userName},'%')
+            </if>
+            <if test="sysUser !=null  and sysUser.dept !=null  and sysUser.dept.deptName !=null and sysUser.dept.deptName !=''">
+                and sd.dept_name like concat('%',#{sysUser.dept.deptName},'%')
+            </if>
+        </where>
+        <!-- 数据范围过滤 -->
+        ${params.dataScope}
+    </select>
+
+    <select id="selectcwcById" parameterType="Long" resultMap="cwcResult">
+        <include refid="selectcwcVo"/>
+        where lc.id = #{id}
+    </select>
+
+    <select id="selectcwcByStuId" parameterType="Long" resultMap="cwcResult">
+        select lc.arrears,lc.total_arrears,lc.handle_status,lc.update_time,lc.arrears,lc.total_arrears
+        from lxgl_cwc lc where lc.stu_id = #{stuId}
+    </select>
+    <select id="selectCwcHandleCountFinished" resultType="java.lang.Integer">
+        select count(1) from lxgl_cwc where handle_status=1
+    </select>
+    <select id="selectCwcHandleCountIncomplete" resultType="java.lang.Integer">
+        select count(1) from lxgl_cwc where handle_status=0
+    </select>
+
+    <insert id="insertcwc" parameterType="Cwc" useGeneratedKeys="true" keyProperty="id">
+        insert into lxgl_cwc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">stu_id,</if>
+            <if test="arrears != null and arrears != ''">arrears,</if>
+            <if test="totalArrears != null">total_arrears,</if>
+            <if test="handleStatus != null">handle_status,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="createBy != null and createBy != ''">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null and updateBy != ''">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">#{stuId},</if>
+            <if test="arrears != null and arrears != ''">#{arrears},</if>
+            <if test="totalArrears != null">#{totalArrears},</if>
+            <if test="handleStatus != null">#{handleStatus},</if>
+            <if test="status != null and status != ''">#{status},</if>
+            <if test="createBy != null and createBy != ''">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null and remark != ''">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updatecwc" parameterType="Cwc">
+        update lxgl_cwc
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stuId != null">stu_id = #{stuId},</if>
+            <if test="arrears != null and arrears != ''">arrears = #{arrears},</if>
+            <if test="totalArrears != null">total_arrears = #{totalArrears},</if>
+            <if test="handleStatus != null">handle_status = #{handleStatus},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="createBy != null and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null and remark != ''">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deletecwcById" parameterType="Long">
+        delete
+        from lxgl_cwc
+        where id = #{id}
+    </delete>
+
+    <delete id="deletecwcByIds" parameterType="String">
+        delete from lxgl_cwc where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
