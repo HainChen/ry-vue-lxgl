@@ -132,10 +132,17 @@ public class LxhjServiceImpl implements ILxhjService {
                 if (flag == null) {
                     //不存在则插入记录
                     lxhjMapper.insertLxhj(stuMsg);
+                } else {
+                    //存在则修改
+                    stuMsg.setId(flag.getId());
+                    lxhjMapper.updateLxhj(stuMsg);
                 }
             } else {
-                //环节中存在一条办理状态为“待审核” ，将删除离校申请表中对应的记录
-                lxhjMapper.deleteLxhjByStuId(userId);
+                //环节中存在一条办理状态为“待审核” ，修改离校申请的处理状态，从待审核修改为前置环节未完成
+
+                Lxhj stuMess = lxhjMapper.selectLxhjByStuId(userId);
+                stuMess.setHandleStatus(Long.parseLong("2"));
+                lxhjMapper.updateLxhj(stuMess);
             }
         }
     }
@@ -197,7 +204,7 @@ public class LxhjServiceImpl implements ILxhjService {
         //判断是否为学生查看自己的环节信息，如果是其他人员则返回null。
 
         Long role_id = sysUserRoleMapper.selectByUserId(id);
-        if(role_id!=2){
+        if (role_id != 2) {
             return null;
         }
 

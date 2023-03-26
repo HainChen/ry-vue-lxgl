@@ -20,10 +20,23 @@
         <result property="remark" column="remark"/>
         <association property="sysUser" resultMap="com.ruoyi.system.mapper.SysUserMapper.SysUserResult"></association>
         <association property="dormitory"
-                     resultMap="com.ruoyi.lxgl.mapper.DormitoryMapper.DormitoryResult"></association>
-        <association property="jwc" resultMap="com.ruoyi.lxgl.mapper.JwcMapper.JwcResult"></association>
-        <association property="cwc" resultMap="com.ruoyi.lxgl.mapper.cwcMapper.cwcResult"></association>
-        <association property="tsg" resultMap="com.ruoyi.lxgl.mapper.TsgMapper.TsgResult"></association>
+                     resultMap="DormitoryResult"></association>
+        <association property="jwc" resultMap="JwcResult"></association>
+        <association property="cwc" resultMap="CwcResult"></association>
+        <association property="tsg" resultMap="TsgResult"></association>
+    </resultMap>
+
+    <resultMap id="DormitoryResult" type="Dormitory">
+        <result property="handleStatus" column="ls_handle_status"/>
+    </resultMap>
+    <resultMap id="JwcResult" type="Jwc">
+        <result property="handleStatus" column="lj_handle_status"/>
+    </resultMap>
+    <resultMap id="CwcResult" type="Cwc">
+        <result property="handleStatus" column="lc_handle_status"/>
+    </resultMap>
+    <resultMap id="TsgResult" type="Tsg">
+        <result property="handleStatus" column="lt_handle_status"/>
     </resultMap>
 
     <sql id="selectLxhjVo">
@@ -58,9 +71,10 @@
         where lh.id = #{id}
     </select>
 
-    <select id="selectLxhjByStuId" parameterType="Long" resultMap="LxhjResult">
-        select handle_status,update_time from lxgl_hj where stu_id = #{stuId}
+    <select id="selectLxhjByStuId" parameterType="Long" resultType="com.ruoyi.lxgl.domain.Lxhj">
+        select id,handle_status,update_time from lxgl_hj where stu_id = #{stuId}
     </select>
+
     <select id="selectLxhjIsNull" resultType="java.lang.Integer">
         select count(*)
         from lxgl_hj

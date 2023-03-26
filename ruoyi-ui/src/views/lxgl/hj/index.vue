@@ -60,7 +60,7 @@
       <el-table-column label="处理时间" align="center" prop="updateTime" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
-          <el-button size="mini" type="text" icon="el-icon-edit" @click="handleUpdate(scope.row)"
+          <el-button :disabled="scope.row.handleStatus == 2" size="mini" type="text" icon="el-icon-edit" @click="handleUpdate(scope.row)"
             v-hasPermi="['lxgl:hj:edit']">审核</el-button>
         </template>
       </el-table-column>

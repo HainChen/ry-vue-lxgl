@@ -9,7 +9,7 @@
         <result property="stuId" column="stu_id"/>
         <result property="course" column="course"/>
         <result property="credit" column="credit"/>
-        <result property="handleStatus" column="lj_handle_status"/>
+        <result property="handleStatus" column="handle_status"/>
         <result property="status" column="status"/>
         <result property="createBy" column="create_by"/>
         <result property="createTime" column="create_time"/>

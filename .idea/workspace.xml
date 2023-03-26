@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b121605-0b4d-4d7f-8e3c-51e6b8672643" name="Changes" comment="欠费模块完成">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/src/main/java/com/ruoyi/lxgl/service/impl/LxhjServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/src/main/java/com/ruoyi/lxgl/service/impl/LxhjServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/DormitoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/DormitoryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/JwcMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/JwcMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/LxhjMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/LxhjMapper.xml" afterDir="false" />
@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/cwcMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/src/main/resources/mapper/lxgl/cwcMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/DormitoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/DormitoryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/JwcMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/JwcMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/LxhjMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/LxhjMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/TsgMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/TsgMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/cwcMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-lxgl/target/classes/mapper/lxgl/cwcMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/lxgl/hj/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/lxgl/hj/index.vue" afterDir="false" />
@@ -225,7 +224,8 @@
       <workItem from="1679793053592" duration="2682000" />
       <workItem from="1679798965762" duration="15199000" />
       <workItem from="1679828406851" duration="1474000" />
-      <workItem from="1679829947144" duration="6752000" />
+      <workItem from="1679829947144" duration="8655000" />
+      <workItem from="1679841350034" duration="6156000" />
     </task>
     <servers />
   </component>
@@ -260,16 +260,6 @@
           <url>file://$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java</url>
           <line>622</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/lxgl/LxhjController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ruoyi-lxgl/src/main/java/com/ruoyi/lxgl/service/impl/LxhjServiceImpl.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
