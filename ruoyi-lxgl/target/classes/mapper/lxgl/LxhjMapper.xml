@@ -27,14 +27,20 @@
     </resultMap>
 
     <sql id="selectLxhjVo">
-        select lh.*, su.*, ls.*, lj.*, lc.*, lt.*, sd.*
-        from lxgl_hj lh
-                 join sys_user su on lh.stu_id = su.user_id
-                 left join lxgl_ss ls on su.user_id = ls.stu_id
-                 left join lxgl_jwc lj on su.user_id = lj.stu_id
-                 left join lxgl_cwc lc on su.user_id = lc.stu_id
-                 left join lxgl_tsg lt on su.user_id = lt.stu_id
-                 left join sys_dept sd on su.dept_id = sd.dept_id
+        SELECT lh.id,lh.stu_id, lh.ss_id, lh.cwc_id, lh.tsg_id, lh.jwc_id, lh.handle_status, lh.update_time,
+               su.user_id, su.dept_id, su.user_name,
+               ls.furniture, ls.indemnity, ls.handle_status AS ls_handle_status, ls.update_time AS ls_update_time,
+               lj.course, lj.credit, lj.handle_status AS lj_handle_status, lj.update_time AS lj_update_time,
+               lc.arrears, lc.total_arrears, lc.handle_status AS lc_handle_status, lc.update_time AS lc_update_time,
+               lt.book_name, lt.overdue_days, lt.handle_status AS lt_handle_status, lt.update_time AS lt_update_time,
+               sd.dept_id, sd.dept_name
+        FROM lxgl_hj lh
+                 JOIN sys_user su ON lh.stu_id = su.user_id
+                 LEFT JOIN lxgl_ss ls ON su.user_id = ls.stu_id
+                 LEFT JOIN lxgl_jwc lj ON su.user_id = lj.stu_id
+                 LEFT JOIN lxgl_cwc lc ON su.user_id = lc.stu_id
+                 LEFT JOIN lxgl_tsg lt ON su.user_id = lt.stu_id
+                 JOIN sys_dept sd ON su.dept_id = sd.dept_id
     </sql>
 
     <select id="selectLxhjList" parameterType="Lxhj" resultMap="LxhjResult">

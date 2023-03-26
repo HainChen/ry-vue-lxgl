@@ -9,7 +9,7 @@
         <result property="stuId" column="stu_id"/>
         <result property="arrears" column="arrears"/>
         <result property="totalArrears" column="total_arrears"/>
-        <result property="handleStatus" column="handle_status"/>
+        <result property="handleStatus" column="lc_handle_status" />
         <result property="status" column="status"/>
         <result property="createBy" column="create_by"/>
         <result property="createTime" column="create_time"/>

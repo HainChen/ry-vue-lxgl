@@ -27,11 +27,31 @@
     </el-row>
 
     <el-table v-loading="loading" :data="hjList" @selection-change="handleSelectionChange">
-      <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="ID" align="center" prop="id" />
+      <!-- <el-table-column type="selection" width="55" align="center" /> -->
+      <!-- <el-table-column  label="ID" align="center" prop="id" /> -->
       <el-table-column label="学生ID" align="center" prop="stuId" />
       <el-table-column label="姓名" align="center" prop="sysUser.userName" width="100" />
       <el-table-column label="班级" align="center" prop="sysUser.dept.deptName" />
+      <el-table-column label="财务处环节" align="center" prop="cwc.handleStatus">
+        <template slot-scope="scope">
+          <dict-tag :options="dict.type.lxgl_cwc_status" :value="scope.row.cwc.handleStatus" />
+        </template>
+      </el-table-column>
+      <el-table-column label="教务处环节" align="center" prop="jwc.handleStatus">
+        <template slot-scope="scope">
+          <dict-tag :options="dict.type.lxgl_cwc_status" :value="scope.row.jwc.handleStatus" />
+        </template>
+      </el-table-column>
+      <el-table-column label="宿舍环节" align="center" prop="dormitory.handleStatus">
+        <template slot-scope="scope">
+          <dict-tag :options="dict.type.lxgl_cwc_status" :value="scope.row.dormitory.handleStatus" />
+        </template>
+      </el-table-column>
+      <el-table-column label="图书馆环节" align="center" prop="tsg.handleStatus">
+        <template slot-scope="scope">
+          <dict-tag :options="dict.type.lxgl_cwc_status" :value="scope.row.tsg.handleStatus" />
+        </template>
+      </el-table-column>
       <el-table-column label="处理状态" align="center" prop="handleStatus">
         <template slot-scope="scope">
           <dict-tag :options="dict.type.lxgl_cwc_status" :value="scope.row.handleStatus" />
@@ -139,6 +159,7 @@ export default {
       this.loading = true;
       listHj(this.queryParams).then(response => {
         this.hjList = response.rows;
+        console.log(this.hjList);
         this.total = response.total;
         this.loading = false;
       });

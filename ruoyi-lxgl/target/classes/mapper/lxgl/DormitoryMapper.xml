@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="stuId"    column="stu_id"    />
         <result property="furniture"    column="furniture"    />
         <result property="indemnity"    column="indemnity"    />
-        <result property="handleStatus"    column="handle_status"    />
+        <result property="handleStatus"    column="ls_handle_status" />
         <result property="status"    column="status"    />
         <result property="createBy"    column="create_by"    />
         <result property="createTime"    column="create_time"    />

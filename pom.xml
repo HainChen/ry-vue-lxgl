@@ -196,10 +196,6 @@
         <module>ruoyi-quartz</module>
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
-        <module>lxgl-student</module>
-        <module>lxgl-student</module>
-        <module>lxgl-student</module>
-        <module>ruoyi-lxgl</module>
         <module>ruoyi-lxgl</module>
     </modules>
     <packaging>pom</packaging>
